@@ -11,8 +11,8 @@ use JSON;
 use CGI::WebIn;
 
 my $dsn = "DBI:mysql:testtask";
-my $username = "testtask_user";
-my $password = 'pwU2jXL1aMG7c2H5OKcX';
+my $username = "...";
+my $password = '...';
 
 my $dbh = DBI->connect($dsn, $username, $password);
 
