@@ -11,8 +11,8 @@ use JSON;
 use CGI::WebIn;
 
 my $dsn = "DBI:mysql:testtask";
-my $username = "...";
-my $password = '...';
+my $username = "testtask_user";
+my $password = 'pwU2jXL1aMG7c2H5OKcX';
 
 my $dbh = DBI->connect($dsn, $username, $password);
 
@@ -47,8 +47,8 @@ if ($IN{ajax}) {
 elsif ($ARGV[0] && $ARGV[0] eq 'parse') {
 	open(LOG, "../tmp/out") || die("Can't open log file");
 
-	$dbh->do("TRUNCATE `log`");
-	$dbh->do("TRUNCATE `message`");
+	#$dbh->do("TRUNCATE `log`");
+	#$dbh->do("TRUNCATE `message`");
 
 	while (my $str = <LOG>) {
 		if ($str =~ /^(\d{4}-\d{2}-\d{2} \d{2}:\d{2}:\d{2})\s+((\S{16})\s+(\S+)\s*([^\s:]+\@[^\s:]+)?(.*))$/) {
